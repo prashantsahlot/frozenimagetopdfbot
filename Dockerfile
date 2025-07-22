@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8080
 
 # Start the bot and dummy server together
-CMD ["sh", "-c", "python3 server.py & python3 main.py"]
+CMD ["sh", "-c", "python3 FrozenConverter/bot.py"]
