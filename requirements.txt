@@ -3,3 +3,4 @@ tgcrypto
 img2pdf
 python-dotenv
 Flask
+Pillow
