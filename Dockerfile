@@ -21,7 +21,11 @@ COPY . .
 # Expose port for uptime server
 EXPOSE 8080
 
-# Start both server and bot
-CMD ["python3", "FrozenConverter/bot.py"]
+# Ensure Python can find internal modules
+ENV PYTHONPATH=/FrozenConverter
+
+# Start the bot
+CMD ["python3", "bot.py"]
+
 
 
