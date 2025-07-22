@@ -2,7 +2,7 @@
 FROM python:3.12-slim
 
 # Set working directory
-WORKDIR /app
+WORKDIR /FrozenConverter
 
 # Install system dependencies for building wheels and git
 RUN apt-get update && apt-get install -y \
