@@ -1,18 +1,25 @@
-# Use official Python image
+# Use official Python slim image
 FROM python:3.12-slim
 
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
+# Install system dependencies for building wheels (gcc etc.)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy and install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all project files
+# Copy all source code
 COPY . .
 
-# Expose server port (optional)
+# Expose port for uptime server
 EXPOSE 8080
 
-# Start the bot and dummy server together
-CMD ["sh", "-c", "python3 FrozenConverter/bot.py"]
+# Start both server and bot
+CMD ["python3", "FrozenConverter/bot.py"]
+
