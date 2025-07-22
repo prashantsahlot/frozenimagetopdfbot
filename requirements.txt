@@ -2,4 +2,4 @@ git+https://github.com/prashantsahlot/FrozenGram.git
 tgcrypto
 img2pdf
 python-dotenv
-
+Flask
