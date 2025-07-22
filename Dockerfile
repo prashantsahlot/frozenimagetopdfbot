@@ -2,9 +2,9 @@
 FROM python:3.12-slim
 
 # Set working directory
-WORKDIR /FrozenConverter
+WORKDIR /app
 
-# Install system dependencies for building wheels and git
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     gcc \
@@ -15,17 +15,14 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all source code
+# Copy all project files
 COPY . .
 
-# Expose port for uptime server
+# Expose port
 EXPOSE 8080
 
-# Ensure Python can find internal modules
-ENV PYTHONPATH=/FrozenConverter
-
-# Start the bot
-CMD ["python3", "bot.py"]
+# Run bot (assuming bot.py is in FrozenConverter folder)
+CMD ["python3", "FrozenConverter/bot.py"]
 
 
 
