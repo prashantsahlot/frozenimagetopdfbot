@@ -6,7 +6,7 @@ from handlers.save_photo import register_save_photo
 from handlers.convert import register_convert
 
 # Import Flask app
-from server import app as flask_app
+from FrozenConverter.server import app as flask_app
 
 # === Start Flask server in background ===
 def run_server():
