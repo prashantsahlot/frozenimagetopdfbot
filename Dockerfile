@@ -22,7 +22,7 @@ COPY . .
 EXPOSE 8080
 
 # Run bot (assuming bot.py is in FrozenConverter folder)
-CMD ["python3", "FrozenConverter/bot.py"]
+CMD ["python3", "bot.py"]
 
 
 
